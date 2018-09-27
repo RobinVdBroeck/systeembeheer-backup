@@ -36,7 +36,6 @@ PermitRootLogin yes
 
 PubkeyAuthentication yes
 
-
 # Expect .ssh/authorized_keys2 to be disregarded by default in future.
 AuthorizedKeysFile /etc/ssh/authorized_keys
 
@@ -123,3 +122,8 @@ Subsystem	sftp	/usr/lib/openssh/sftp-server
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
+
+Match User check
+	PasswordAuthentication no
+	AuthorizedKeysFile /etc/ssh/authorized_keys_check
+
