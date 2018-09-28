@@ -2,7 +2,7 @@
 #----------------------------------------------------------------
 # Start of summary of user-configurable 'make makefiles' options.
 # CCARGS=-DDEBIAN -DHAS_PCRE -DHAS_LDAP -DUSE_LDAP_SASL -DHAS_SQLITE -DMYORIGIN_FROM_FILE  -DHAS_CDB -DHAS_LMDB -DHAS_MYSQL -I/usr/include/mysql -DHAS_PGSQL -I/usr/include/postgresql -DHAS_SQLITE -I/usr/include -DHAS_SSL -I/usr/include/openssl -DUSE_SASL_AUTH -I/usr/include/sasl -DUSE_CYRUS_SASL -DUSE_TLS
-# AUXLIBS=-lssl -lcrypto -lsasl2 -lpthread -L/tmp/buildd/postfix-3.1.6/debian
+# AUXLIBS=-lssl -lcrypto -lsasl2 -lpthread -L/tmp/buildd/postfix-3.1.8/debian
 # AUXLIBS_CDB=-lcdb -L../../lib -L. -lpostfix-util
 # AUXLIBS_LMDB=-llmdb -L../../lib -L. -lpostfix-util
 # AUXLIBS_MYSQL=-lmysqlclient -L../../lib -L. -lpostfix-util -lpostfix-global
@@ -24,7 +24,7 @@ SYSTYPE	= LINUX3
 _AR	= ar
 ARFL	= rv
 _RANLIB	= ranlib
-SYSLIBS	= -pie -z relro -z now -lssl -lcrypto -lsasl2 -lpthread -L/tmp/buildd/postfix-3.1.6/debian -ldb -lnsl -lresolv -ldl -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata 
+SYSLIBS	= -pie -z relro -z now -lssl -lcrypto -lsasl2 -lpthread -L/tmp/buildd/postfix-3.1.8/debian -ldb -lnsl -lresolv -ldl -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata 
 AUXLIBS_CDB = -lcdb -L../../lib -L. -lpostfix-util
 AUXLIBS_LDAP = -lldap -llber -L../../lib -L. -lpostfix-util -lpostfix-global
 AUXLIBS_LMDB = -llmdb -L../../lib -L. -lpostfix-util
@@ -50,9 +50,9 @@ LIB_PREFIX = postfix-
 LIB_SUFFIX = .so
 SHLIB_CFLAGS = -fPIC
 SHLIB_DIR = /usr/lib/postfix
-SHLIB_ENV = LD_LIBRARY_PATH=/tmp/buildd/postfix-3.1.6/lib
+SHLIB_ENV = LD_LIBRARY_PATH=/tmp/buildd/postfix-3.1.8/lib
 SHLIB_LD = gcc -shared -Wl,-soname,${LIB}
-SHLIB_SYSLIBS = -lssl -lcrypto -lsasl2 -lpthread -L/tmp/buildd/postfix-3.1.6/debian -ldb -lnsl -lresolv -ldl -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata
+SHLIB_SYSLIBS = -lssl -lcrypto -lsasl2 -lpthread -L/tmp/buildd/postfix-3.1.8/debian -ldb -lnsl -lresolv -ldl -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata
 SHLIB_RPATH = -Wl,--enable-new-dtags -Wl,-rpath,${SHLIB_DIR}
 # Switch between dynamicmaps.cf plugins and hard-linked databases.
 NON_PLUGIN_MAP_OBJ = 
