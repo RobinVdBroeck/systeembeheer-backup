@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /root/systeembeheer-minor.git
+cd /root/git
 git push --mirror git@gitlab.com:GamesMaxed/backup-sbm.git
 
 
