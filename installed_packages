@@ -179,6 +179,7 @@ libnfnetlink0:amd64				install
 libnfsidmap2:amd64				install
 libnghttp2-14:amd64				install
 libnpth0:amd64					install
+libopts25:amd64					install
 libp11-kit0:amd64				install
 libpam-cap:amd64				install
 libpam-modules:amd64				install
@@ -297,6 +298,7 @@ ncurses-term					install
 net-tools					install
 netbase						install
 netcat-traditional				install
+ntp						install
 openssh-client					install
 openssh-server					install
 openssh-sftp-server				install
