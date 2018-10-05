@@ -346,7 +346,6 @@ shared-mime-info				install
 ssh						install
 ssl-cert					install
 sudo						install
-syslog-ng					install
 syslog-ng-core					install
 syslog-ng-mod-add-contextual-data		install
 syslog-ng-mod-amqp				install
