@@ -341,7 +341,6 @@ sed						install
 sensible-utils					install
 shared-mime-info				install
 ssh						install
-sshguard					install
 ssl-cert					install
 sudo						install
 syslog-ng					install
