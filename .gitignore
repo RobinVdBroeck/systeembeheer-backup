@@ -28,3 +28,4 @@
 !ntp.conf
 .gitignore
 !ufw/
+!todo.md
