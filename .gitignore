@@ -19,8 +19,6 @@
 !udev/
 !vim/
 !extra_exercises
-!syslog-ng/
-!sshguard/
 !sudoers.d/
 !sudoers
 !installed_packages
@@ -29,3 +27,4 @@
 .gitignore
 !ufw/
 !todo.md
+!fail2ban/

@@ -31,6 +31,7 @@ doc-debian					install
 dpkg						install
 e2fslibs:amd64					install
 e2fsprogs					install
+fail2ban					install
 file						install
 findutils					install
 fontconfig-config				install
@@ -326,10 +327,12 @@ python3-httplib2				install
 python3-minimal					install
 python3-pkg-resources				install
 python3-pycurl					install
+python3-pyinotify				install
 python3-pysimplesoap				install
 python3-reportbug				install
 python3-requests				install
 python3-six					install
+python3-systemd					install
 python3-urllib3					install
 python3.5					install
 python3.5-minimal				install
@@ -376,6 +379,7 @@ vim-tiny					install
 wamerican					install
 wget						install
 whiptail					install
+whois						install
 x11-apps					install
 x11-common					install
 x11-session-utils				install
