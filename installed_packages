@@ -370,6 +370,7 @@ traceroute					install
 tzdata						install
 ucf						install
 udev						install
+ufw						install
 util-linux					install
 vim-common					install
 vim-tiny					install

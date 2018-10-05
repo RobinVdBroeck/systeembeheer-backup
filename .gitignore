@@ -27,3 +27,4 @@
 !network/
 !ntp.conf
 .gitignore
+!ufw/
