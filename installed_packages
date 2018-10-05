@@ -79,6 +79,7 @@ libc-l10n					install
 libc6:amd64					install
 libcap-ng0:amd64				install
 libcap2:amd64					install
+libcap2-bin					install
 libclass-isa-perl				install
 libcomerr2:amd64				install
 libcryptsetup4:amd64				install
@@ -179,6 +180,7 @@ libnfsidmap2:amd64				install
 libnghttp2-14:amd64				install
 libnpth0:amd64					install
 libp11-kit0:amd64				install
+libpam-cap:amd64				install
 libpam-modules:amd64				install
 libpam-modules-bin				install
 libpam-runtime					install
@@ -284,6 +286,8 @@ man-db						install
 manpages					install
 mawk						install
 mime-support					install
+monitoring-plugins-basic			install
+monitoring-plugins-common			install
 mount						install
 multiarch-support				install
 nano						install
