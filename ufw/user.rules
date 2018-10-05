@@ -28,6 +28,10 @@
 -A ufw-user-input -p tcp --dport 123 -s 193.190.253.145 -j ACCEPT
 -A ufw-user-input -p udp --dport 123 -s 193.190.253.145 -j ACCEPT
 
+### tuple ### allow any 123 0.0.0.0/0 any 193.191.177.1 in
+-A ufw-user-input -p tcp --dport 123 -s 193.191.177.1 -j ACCEPT
+-A ufw-user-input -p udp --dport 123 -s 193.191.177.1 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###
