@@ -24,6 +24,9 @@
 -A ufw6-user-input -p tcp --dport 123 -s 2001:6a8:2880:a021::6 -j ACCEPT
 -A ufw6-user-input -p udp --dport 123 -s 2001:6a8:2880:a021::6 -j ACCEPT
 
+### tuple ### allow tcp 9000 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 9000 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###

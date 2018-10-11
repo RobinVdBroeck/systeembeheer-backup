@@ -11,6 +11,7 @@ bsdmainutils					install
 bsdutils					install
 bzip2						install
 ca-certificates					install
+ca-certificates-java				install
 coreutils					install
 cpio						install
 cpp						install
@@ -48,6 +49,7 @@ grep						install
 groff-base					install
 gzip						install
 hostname					install
+htop						install
 ifupdown					install
 incron						deinstall
 init						install
@@ -57,6 +59,7 @@ iptables					install
 iputils-ping					install
 isc-dhcp-client					install
 isc-dhcp-common					install
+java-common					install
 kmod						install
 krb5-locales					install
 less						install
@@ -70,6 +73,9 @@ libatomic1:amd64				install
 libattr1:amd64					install
 libaudit-common					install
 libaudit1:amd64					install
+libavahi-client3:amd64				install
+libavahi-common-data:amd64			install
+libavahi-common3:amd64				install
 libbind9-140:amd64				install
 libblkid1:amd64					install
 libbsd0:amd64					install
@@ -84,6 +90,7 @@ libcap2-bin					install
 libclass-isa-perl				install
 libcomerr2:amd64				install
 libcryptsetup4:amd64				install
+libcups2:amd64					install
 libcurl3-gnutls:amd64				install
 libdb5.3:amd64					install
 libdbi1:amd64					install
@@ -141,6 +148,7 @@ libisccc140:amd64				install
 libisccfg140:amd64				install
 libisl15:amd64					install
 libivykis0:amd64				install
+libjpeg62-turbo:amd64				install
 libjson-c3:amd64				install
 libk5crypto3:amd64				install
 libkadm5clnt-mit11:amd64			install
@@ -152,6 +160,7 @@ libkrad0:amd64					install
 libkrb5-3:amd64					install
 libkrb5support0:amd64				install
 libksba8:amd64					install
+liblcms2-2:amd64				install
 libldap-2.4-2:amd64				install
 libldap-common					install
 liblocale-gettext-perl				install
@@ -180,6 +189,8 @@ libnfnetlink0:amd64				install
 libnfsidmap2:amd64				install
 libnghttp2-14:amd64				install
 libnpth0:amd64					install
+libnspr4:amd64					install
+libnss3:amd64					install
 libopts25:amd64					install
 libp11-kit0:amd64				install
 libpam-cap:amd64				install
@@ -190,6 +201,7 @@ libpam-systemd:amd64				install
 libpam0g:amd64					install
 libpci3:amd64					install
 libpcre3:amd64					install
+libpcsclite1:amd64				install
 libperl5.24:amd64				install
 libpipeline1:amd64				install
 libpng16-16:amd64				install
@@ -300,6 +312,8 @@ net-tools					install
 netbase						install
 netcat-traditional				install
 ntp						install
+openjdk-8-jdk-headless:amd64			install
+openjdk-8-jre-headless:amd64			install
 openssh-client					install
 openssh-server					install
 openssh-sftp-server				install
