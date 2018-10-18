@@ -17,6 +17,7 @@ cpio						install
 cpp						install
 cpp-6						install
 cron						install
+cron-apt					install
 dash						install
 dbus						install
 debconf						install
