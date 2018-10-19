@@ -6,7 +6,10 @@ base-files					install
 base-passwd					install
 bash						install
 bash-completion					install
+bind9						install
+bind9-doc					install
 bind9-host					install
+bind9utils					install
 bsdmainutils					install
 bsdutils					install
 bzip2						install
@@ -29,6 +32,7 @@ dh-python					install
 diffutils					install
 dmidecode					install
 dmsetup						install
+dnsutils					install
 doc-debian					install
 dpkg						install
 e2fslibs:amd64					install
@@ -337,8 +341,10 @@ python3-systemd					install
 python3-urllib3					install
 python3.5					install
 python3.5-minimal				install
+rblcheck					install
 readline-common					install
 reportbug					install
+resolvconf					install
 rsync						install
 rsyslog						install
 sed						install
