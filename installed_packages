@@ -370,7 +370,9 @@ ucf						install
 udev						install
 ufw						install
 util-linux					install
+vim						install
 vim-common					install
+vim-runtime					install
 vim-tiny					install
 wamerican					install
 wget						install
