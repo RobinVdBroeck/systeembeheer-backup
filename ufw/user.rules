@@ -35,6 +35,10 @@
 ### tuple ### allow tcp 9000 0.0.0.0/0 any 0.0.0.0/0 in
 -A ufw-user-input -p tcp --dport 9000 -j ACCEPT
 
+### tuple ### allow any 53 0.0.0.0/0 any 0.0.0.0/0 DNS - in
+-A ufw-user-input -p tcp --dport 53 -j ACCEPT -m comment --comment 'dapp_DNS'
+-A ufw-user-input -p udp --dport 53 -j ACCEPT -m comment --comment 'dapp_DNS'
+
 ### END RULES ###
 
 ### LOGGING ###
