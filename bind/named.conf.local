@@ -6,7 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone ns.robinvandenbroeck.sb.uclllabs.be {
+zone ns.robin-vandenbroeck.sb.uclllabs.be {
 	type master;
-	file "/etc/bind/zones/db.ns.robinvandenbroeck.sb.ucllabs.be";
-}
+	file "/etc/bind/zones/db.ns.robin-vandenbroeck.sb.ucllabs.be";
+};
