@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import argparse
+
+parser = argparse.ArgumentParser(description = "Add a dns record")
+parser.add_argument('-t', type=str, default="A")
+parser.add_argument("subdomain")
+parser.add_argument("ip")
+parser.add_argument("zone")
+args = parser.parse_args()
+#print(args.subdomain)
