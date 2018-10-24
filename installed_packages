@@ -22,6 +22,7 @@ cpp-6						install
 cron						install
 cron-apt					install
 dash						install
+dbconfig-common					deinstall
 dbus						install
 debconf						install
 debconf-i18n					install
@@ -311,6 +312,9 @@ openssh-sftp-server				install
 openssl						install
 passwd						install
 patch						install
+pdns-backend-bind				deinstall
+pdns-backend-sqlite3				deinstall
+pdns-server					deinstall
 perl						install
 perl-base					install
 perl-modules-5.24				install
