@@ -6,6 +6,7 @@ $TTL	1
 			2419200		; Expire
 			  86400 )	; Negative Cache TTL
 	IN	NS	ns1.uclllabs.be.
+	IN	NS	ns2.uclllabs.be.
 
 ns	IN	A	193.191.177.180
 www	IN	A	193.191.177.180
