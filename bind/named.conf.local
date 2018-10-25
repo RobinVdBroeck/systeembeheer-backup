@@ -9,5 +9,5 @@
 zone robin-vandenbroeck.sb.uclllabs.be {
 	type master;
 	notify yes;
-	file "/etc/bind/zones/db.robin-vandenbroeck.sb.ucllabs.be";
+	file "/etc/bind/zones/db.robin-vandenbroeck.sb.uclllabs.be";
 };
