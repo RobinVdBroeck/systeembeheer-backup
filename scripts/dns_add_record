@@ -2,7 +2,6 @@
 import sys
 import os.path
 
-
 allowed_types = ["A", "CNAME", "MX"]
 
 def print_error(message):
@@ -60,7 +59,15 @@ if __name__ == '__main__':
 	elif type == 'A':
 		if len(args) != 3:
 			print_error("A type requires 3 params: alias name + ip + zone (ex: test 12.34.56.78 foobar.uclllabs.be")
+		alias_name = args[0]
+		ip = args[1]
+		zone = args[2]
+		add_to_zone('\t'.join([alias_name, 'IN', type, ip], zone)
+
 	elif type == 'MX':
 		if len(args) != 3:
 			print_error("MX type requires 3 paras: name + ip + zone (ex: mail 99.88.77.66 you.sb.uclllabs.be")
-
+		name = args[0]
+		ip = args[1]
+		zone = args[2]
+		add_to_zone('\t'.join([name, 'IN', type, ip], zone)
