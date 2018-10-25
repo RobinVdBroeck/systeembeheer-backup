@@ -1,10 +1,66 @@
 #!/usr/bin/env python3
-import argparse
+import sys
+import os.path
 
-parser = argparse.ArgumentParser(description = "Add a dns record")
-parser.add_argument('-t', type=str, default="A")
-parser.add_argument("subdomain")
-parser.add_argument("ip")
-parser.add_argument("zone")
-args = parser.parse_args()
-#print(args.subdomain)
+
+allowed_types = ["A", "CNAME", "MX"]
+
+def print_error(message):
+	print(message, file=sys.stderr)
+	sys.exit(1)
+
+def get_type_from_args(args, delete = False):
+	if('-t' in args):
+		index = args.index('-t')
+		type = args[index + 1]
+		if type not in allowed_types:
+			print_error(type + "is not an allowed type for a dns record, following are allowed:" + ','.join(allowed_types))
+		if delete:
+			for _ in range(2):
+				args.pop(index)
+	else:
+		type = "A"
+	return type
+
+def remove_first_del(string, delimiter):
+	string_list = string.split(delimiter)
+	string_list.pop(0)
+	result = delimiter.join(string_list)
+	return result
+
+def add_to_zone(line, zone):
+	zone_file_location = "/etc/bind/zones/db." + zone
+
+	exists = os.path.isfile(zone_file_location)
+	if not exists:
+		print_error("Zone: " + zone + " does not exists (looked for " + zone_file_location + ")")
+
+	with f = open(zone_file_location, "w"):
+		print("Writing: " + line + " to zone " + zone)
+		f.write(line)
+
+
+if __name__ == '__main__':
+	args = sys.argv
+	# We dont need the name of the command
+	args.pop(0)
+	# Get the type
+	type = get_type_from_args(args, True)
+
+	# If type is cname: only require two params
+	if type == 'CNAME':
+		if len(args) != 2:
+			print(args)
+			print_error("CNAME type requires 2 params: name + value (ex: wwwwwww www.you.sb.uclllabs.be)")
+		name = args[0]
+		value = args[1]
+		zone = remove_first_del(value, '.')
+		add_to_zone('\t'.join([name, 'IN', type, value]), zone)
+
+	elif type == 'A':
+		if len(args) != 3:
+			print_error("A type requires 3 params: alias name + ip + zone (ex: test 12.34.56.78 foobar.uclllabs.be")
+	elif type == 'MX':
+		if len(args) != 3:
+			print_error("MX type requires 3 paras: name + ip + zone (ex: mail 99.88.77.66 you.sb.uclllabs.be")
+
