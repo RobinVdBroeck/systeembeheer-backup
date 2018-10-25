@@ -5,7 +5,7 @@ import os.path
 allowed_types = ["A", "CNAME", "MX"]
 
 def print_error(message):
-	print(message, file=sys.stderr)
+	print(message)
 	sys.exit(1)
 
 def get_type_from_args(args, delete = False):
