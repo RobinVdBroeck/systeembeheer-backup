@@ -1,4 +1,8 @@
 adduser						install
+apache2						install
+apache2-bin					install
+apache2-data					install
+apache2-utils					install
 apt						install
 apt-listchanges					install
 apt-utils					install
@@ -83,6 +87,10 @@ libalgorithm-diff-perl				install
 libalgorithm-diff-xs-perl			install
 libalgorithm-merge-perl				install
 libapparmor1:amd64				install
+libapr1:amd64					install
+libaprutil1:amd64				install
+libaprutil1-dbd-sqlite3:amd64			install
+libaprutil1-ldap:amd64				install
 libapt-inst2.0:amd64				install
 libapt-pkg5.0:amd64				install
 libasan3:amd64					install
@@ -194,6 +202,7 @@ liblockfile1:amd64				install
 liblogging-stdlog0:amd64			install
 liblognorm5:amd64				install
 liblsan0:amd64					install
+liblua5.2-0:amd64				install
 liblwres141:amd64				install
 liblz4-1:amd64					install
 liblzma5:amd64					install
