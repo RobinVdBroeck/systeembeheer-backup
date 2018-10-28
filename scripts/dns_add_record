@@ -34,7 +34,7 @@ def add_to_zone(line, zone):
 	if not exists:
 		print_error("Zone: " + zone + " does not exists (looked for " + zone_file_location + ")")
 
-	with open(zone_file_location, "w") as file:
+	with open(zone_file_location, "a") as file:
 		print("Writing: " + line + " to zone " + zone)
 		file.write(line)
 
