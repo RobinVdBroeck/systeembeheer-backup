@@ -36,7 +36,7 @@ def add_to_zone(line, zone):
 
 	with open(zone_file_location, "a") as file:
 		print("Writing: " + line + " to zone " + zone)
-		file.write(line)
+		file.write(line + "\n")
 
 
 if __name__ == '__main__':
