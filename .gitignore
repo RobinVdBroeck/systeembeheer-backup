@@ -30,3 +30,4 @@
 !fail2ban/
 !bind/
 !apache2/
+!php/

@@ -86,6 +86,7 @@ libacl1:amd64					install
 libalgorithm-diff-perl				install
 libalgorithm-diff-xs-perl			install
 libalgorithm-merge-perl				install
+libapache2-mod-php7.0				install
 libapparmor1:amd64				install
 libapr1:amd64					install
 libaprutil1:amd64				install
@@ -367,10 +368,19 @@ pdns-server					deinstall
 perl						install
 perl-base					install
 perl-modules-5.24				install
+php						install
+php-common					install
+php7.0						install
+php7.0-cli					install
+php7.0-common					install
+php7.0-json					install
+php7.0-opcache					install
+php7.0-readline					install
 pinentry-curses					install
 postfix						install
 postfix-sqlite					install
 procps						install
+psmisc						install
 python						install
 python-apt-common				install
 python-minimal					install
