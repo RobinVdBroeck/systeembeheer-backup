@@ -1,6 +1,6 @@
 $TTL	1
 @	IN	SOA	robin-vandenbroeck.sb.uclllabs.be. ns1.uclllabs.be. (
-			 111117		; Serial
+			 111118		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -14,4 +14,4 @@ www	IN	A	193.191.177.180
 www1	IN	A	193.191.177.180
 test	IN	A	193.191.177.254
 www2	IN	A	193.191.177.180
-
+secure	IN	A	193.191.177.180
