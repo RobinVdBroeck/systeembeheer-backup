@@ -24,7 +24,7 @@
 !installed_packages
 !network/
 !ntp.conf
-.gitignore
+!.gitignore
 !ufw/
 !todo.md
 !fail2ban/
@@ -32,3 +32,4 @@
 !apache2/
 !php/
 !letsencrypt/
+!ssl/caddy
