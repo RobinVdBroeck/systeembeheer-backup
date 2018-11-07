@@ -29,6 +29,7 @@ cpp						install
 cpp-6						install
 cron						install
 cron-apt					install
+curl						install
 dash						install
 dbconfig-common					deinstall
 dbus						install
@@ -125,6 +126,7 @@ libclass-isa-perl				install
 libcomerr2:amd64				install
 libcryptsetup4:amd64				install
 libcups2:amd64					install
+libcurl3:amd64					install
 libcurl3-gnutls:amd64				install
 libdb5.3:amd64					install
 libdbus-1-3:amd64				install
