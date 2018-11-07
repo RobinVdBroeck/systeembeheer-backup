@@ -1,5 +1,4 @@
 adduser						install
-apache2						install
 apache2-bin					install
 apache2-data					install
 apache2-utils					install
@@ -391,7 +390,6 @@ python-acme					install
 python-apt-common				install
 python-augeas					install
 python-certbot					install
-python-certbot-apache				install
 python-cffi-backend				install
 python-chardet					install
 python-configargparse				install
