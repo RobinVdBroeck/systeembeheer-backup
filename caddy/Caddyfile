@@ -2,4 +2,6 @@ www1.robin-vandenbroeck.sb.uclllabs.be:80 {
     root /var/www/www1
     gzip
     basicauth /private check ch3ck
+    log /var/log/http/access-www1.log
+    errors /var/log/http/error-www1.log
 }
