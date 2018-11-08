@@ -5,3 +5,11 @@ www1.robin-vandenbroeck.sb.uclllabs.be:80 {
     log /var/log/http/access-www1.log
     errors /var/log/http/error-www1.log
 }
+
+www2.robin-vandenbroeck.sb.uclllabs.be:80 {
+   root /etc/www/www2
+   gzip
+   log /var/log/http/access-www2.log
+   errors /var/log/http/error-www2.log
+   fastcgi / 127.0.0.1:9000 php
+}
