@@ -33,3 +33,4 @@
 !php/
 !letsencrypt/
 !ssl/caddy
+!caddy/
