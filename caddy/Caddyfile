@@ -1,4 +1,4 @@
-www1.robin-vandenbroeck.sb.uclllabs.be:80 {
+http://www1.robin-vandenbroeck.sb.uclllabs.be {
     root /etc/www/www1
     gzip
     basicauth /private check ch3ck
@@ -6,10 +6,21 @@ www1.robin-vandenbroeck.sb.uclllabs.be:80 {
     errors /var/log/http/error-www1.log
 }
 
-www2.robin-vandenbroeck.sb.uclllabs.be:80 {
+http://www2.robin-vandenbroeck.sb.uclllabs.be {
    root /etc/www/www2
    gzip
    log /var/log/http/access-www2.log
    errors /var/log/http/error-www2.log
    fastcgi / 127.0.0.1:9000 php
+}
+
+http://secure.robin-vandenbroeck.sb.uclllabs.be {
+  redir https://secure.robin-vandenbroeck.sb.uclllabs.be
+}
+
+https://secure.robin-vandenbroeck.sb.uclllabs.be {
+  root /etc/www/secure
+  gzip
+  log /var/log/http/access-secure.log
+  errors /var/log/http/error-secure.log
 }
