@@ -32,6 +32,6 @@
 !apache2/
 !php/
 !letsencrypt/
-!ssl/caddy
+!ssl/caddy/
 !caddy/
 !www/
