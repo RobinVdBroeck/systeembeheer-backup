@@ -16,6 +16,7 @@ bsdmainutils					install
 bsdutils					install
 build-essential					install
 bzip2						install
+ca-cacert					install
 ca-certificates					install
 ca-certificates-java				install
 certbot						deinstall
