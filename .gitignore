@@ -37,3 +37,4 @@
 !www/
 !mysql/
 !dovecot/
+!imap.passwd/
