@@ -1,0 +1,60 @@
+#!/usr/bin/python3
+import sys
+import os
+
+def print_error(err):
+    print(err)
+    sys.exit(1)
+
+
+def empty_zone(zone_name):
+    return """
+    $TLL 60480
+    @   IN  SOA %s webmaster.ucll.be (
+                       1    ; Serial
+                  604800    ; Refresh
+                   86400    ; Retry
+                 2419200    ; Expire
+                    8640 )  ; Negative cache ttl
+        IN  NS  ns1.uclllabs.be
+        IN  NS  ns2.uclllabs.be
+        IN  A   193.191.177.180
+    
+    """ % (zone_name)
+
+def add_zone(zone_name, zone_content):
+    zone_file_location = "/etc/bind/zones/db." + zone_name
+
+    exists = os.path.isfile(zone_file_location)
+    if exists:
+        print_error("Cannot create allready exisiting zone")
+    with open(zone_file_location, "w+") as file:
+        file.write(zone_content + "\n")
+        return zone_file_location
+
+def add_to_named(zone_name, zone_file_location):
+    with open("/etc/bind/named.conf.local", "a") as file:
+        file.write("""
+        zone %s {
+            type master;
+            notify yes;
+            file "%s"
+        };
+        
+        """ % (zone_name, zone_file_location))
+
+
+if __name__ == '__main__':
+    args = sys.argv
+    # Don't need the name of the script
+    args.pop(0)
+    try:
+        zone_name = args[0]
+    except IndexError:
+        print_error("Please enter a zone")
+
+    
+    zone_content = empty_zone(zone_name)
+    zone_file_location = add_zone(zone_name, zone_content)
+    add_to_named(zone_name, zone_file_location)
+
