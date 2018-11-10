@@ -35,3 +35,4 @@
 !ssl/caddy/
 !caddy/
 !www/
+!mysql/
