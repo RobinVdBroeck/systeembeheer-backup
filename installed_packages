@@ -20,6 +20,8 @@ ca-cacert					install
 ca-certificates					install
 ca-certificates-java				install
 certbot						deinstall
+clamav-base					deinstall
+clamav-freshclam				deinstall
 coreutils					install
 cpio						install
 cpp						install
