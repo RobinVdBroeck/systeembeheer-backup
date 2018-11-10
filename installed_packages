@@ -176,11 +176,13 @@ libgl1-mesa-glx:amd64				install
 libglapi-mesa:amd64				install
 libglib2.0-0:amd64				install
 libglib2.0-data					install
+libgmime-2.6-0:amd64				install
 libgmp10:amd64					install
 libgnutls-openssl27:amd64			install
 libgnutls30:amd64				install
 libgomp1:amd64					install
 libgpg-error0:amd64				install
+libgpgme11:amd64				install
 libgpm2:amd64					install
 libgssapi-krb5-2:amd64				install
 libgssglue1:amd64				install
@@ -254,6 +256,7 @@ libnewt0.52:amd64				install
 libnfnetlink0:amd64				install
 libnfsidmap2:amd64				install
 libnghttp2-14:amd64				install
+libnotmuch4					install
 libnpth0:amd64					install
 libnspr4:amd64					install
 libnss3:amd64					install
@@ -289,6 +292,7 @@ libreadline7:amd64				install
 librpcsecgss3:amd64				install
 librtmp1:amd64					install
 libsasl2-2:amd64				install
+libsasl2-modules:amd64				install
 libsasl2-modules-db:amd64			install
 libseccomp2:amd64				install
 libselinux1:amd64				install
@@ -310,6 +314,7 @@ libstdc++6:amd64				install
 libstemmer0d:amd64				install
 libswitch-perl					install
 libsystemd0:amd64				install
+libtalloc2:amd64				install
 libtasn1-6:amd64				install
 libterm-readkey-perl				install
 libtext-charwidth-perl				install
@@ -388,6 +393,7 @@ monitoring-plugins-basic			install
 monitoring-plugins-common			install
 mount						install
 multiarch-support				install
+mutt						install
 mysql-common					install
 nano						install
 ncurses-base					install
