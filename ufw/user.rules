@@ -43,6 +43,9 @@
 ### tuple ### allow tcp 443 0.0.0.0/0 any 0.0.0.0/0 in
 -A ufw-user-input -p tcp --dport 443 -j ACCEPT
 
+### tuple ### allow tcp 3306 0.0.0.0/0 any 0.0.0.0/0 in
+-A ufw-user-input -p tcp --dport 3306 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###
