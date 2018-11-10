@@ -1,6 +1,6 @@
 $TTL	1
 @	IN	SOA	robin-vandenbroeck.sb.uclllabs.be. ns1.uclllabs.be. (
-			 111133		; Serial
+			 111134		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -30,4 +30,5 @@ supersecure.robin-vandenbroeck.sb.uclllabs.be	IN	CAA	0 issue "letsencrypt.org"
 supersecure.robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 iodef "mailto:robin.vandenbroeck@student.ucll.be"
 phpmyadmin.robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 issue "letsencrypt.org"
 phpmyadmin.robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 iodef "mailto:robin.vandenbroeck@student.ucll.be"
-
+mx.robin-vandenbroeck.sb.uclllabs.be		IN	CAA	0 issue "letsencrypt.org"
+mx.robin-vandenbroeck.sb.uclllabs.be		IN	CAA	0 iodef "mailto:robin.vandenbroeck@student.ucll.be"
