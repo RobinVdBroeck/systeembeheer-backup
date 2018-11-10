@@ -56,3 +56,4 @@ ntp:x:115:
 bind:x:116:
 caddy:x:1001:
 mysql:x:117:
+vmail:x:2222:
