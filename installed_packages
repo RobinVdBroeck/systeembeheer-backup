@@ -402,11 +402,13 @@ perl-modules-5.24				install
 php						install
 php-common					install
 php-fpm						install
+php-mysql					install
 php7.0						install
 php7.0-cli					install
 php7.0-common					install
 php7.0-fpm					install
 php7.0-json					install
+php7.0-mysql					install
 php7.0-opcache					install
 php7.0-readline					install
 pinentry-curses					install
