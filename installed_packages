@@ -43,6 +43,8 @@ dmidecode					install
 dmsetup						install
 dnsutils					install
 doc-debian					install
+dovecot-core					install
+dovecot-imapd					install
 dpkg						install
 dpkg-dev					install
 e2fslibs:amd64					install
@@ -151,6 +153,8 @@ libev4						install
 libevent-2.0-5:amd64				install
 libexpat1:amd64					install
 libexpat1-dev:amd64				install
+libexttextcat-2.0-0:amd64			install
+libexttextcat-data				install
 libfakeroot:amd64				install
 libfastjson4:amd64				install
 libfcgi-perl					install
@@ -297,6 +301,7 @@ libssl1.0.2:amd64				install
 libssl1.1:amd64					install
 libstdc++-6-dev:amd64				install
 libstdc++6:amd64				install
+libstemmer0d:amd64				install
 libswitch-perl					install
 libsystemd0:amd64				install
 libtasn1-6:amd64				install
