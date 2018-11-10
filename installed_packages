@@ -53,6 +53,8 @@ fontconfig-config				install
 fonts-dejavu-core				install
 g++						install
 g++-6						install
+galera-3					install
+gawk						install
 gcc						install
 gcc-6						install
 gcc-6-base:amd64				install
@@ -83,6 +85,7 @@ kmod						install
 krb5-locales					install
 less						install
 libacl1:amd64					install
+libaio1:amd64					install
 libalgorithm-diff-perl				install
 libalgorithm-diff-xs-perl			install
 libalgorithm-merge-perl				install
@@ -117,6 +120,8 @@ libcap-ng0:amd64				install
 libcap2:amd64					install
 libcap2-bin					install
 libcc1-0:amd64					install
+libcgi-fast-perl				install
+libcgi-pm-perl					install
 libcilkrts5:amd64				install
 libclass-isa-perl				install
 libcomerr2:amd64				install
@@ -125,6 +130,8 @@ libcups2:amd64					install
 libcurl3:amd64					install
 libcurl3-gnutls:amd64				install
 libdb5.3:amd64					install
+libdbd-mysql-perl				install
+libdbi-perl					install
 libdbus-1-3:amd64				install
 libdbus-glib-1-2:amd64				install
 libdebconfclient0:amd64				install
@@ -135,6 +142,7 @@ libdpkg-perl					install
 libdrm2:amd64					install
 libedit2:amd64					install
 libelf1:amd64					install
+libencode-locale-perl				install
 liberror-perl					install
 libestr0					install
 libev4						install
@@ -143,6 +151,7 @@ libexpat1:amd64					install
 libexpat1-dev:amd64				install
 libfakeroot:amd64				install
 libfastjson4:amd64				install
+libfcgi-perl					install
 libfdisk1:amd64					install
 libffi6:amd64					install
 libfile-fcntllock-perl				install
@@ -170,10 +179,16 @@ libgssapi-krb5-2:amd64				install
 libgssglue1:amd64				install
 libgssrpc4:amd64				install
 libhogweed4:amd64				install
+libhtml-parser-perl				install
+libhtml-tagset-perl				install
+libhtml-template-perl				install
+libhttp-date-perl				install
+libhttp-message-perl				install
 libice6:amd64					install
 libicu57:amd64					install
 libidn11:amd64					install
 libidn2-0:amd64					install
+libio-html-perl					install
 libip4tc0:amd64					install
 libip6tc0:amd64					install
 libiptc0:amd64					install
@@ -184,6 +199,7 @@ libisccc140:amd64				install
 libisccfg140:amd64				install
 libisl15:amd64					install
 libitm1:amd64					install
+libjemalloc1					install
 libjpeg62-turbo:amd64				install
 libk5crypto3:amd64				install
 libkadm5clnt-mit11:amd64			install
@@ -205,11 +221,13 @@ liblogging-stdlog0:amd64			install
 liblognorm5:amd64				install
 liblsan0:amd64					install
 liblua5.2-0:amd64				install
+liblwp-mediatypes-perl				install
 liblwres141:amd64				install
 liblz4-1:amd64					install
 liblzma5:amd64					install
 libmagic-mgc					install
 libmagic1:amd64					install
+libmariadbclient18:amd64			install
 libmnl0:amd64					install
 libmount1:amd64					install
 libmpc3:amd64					install
@@ -255,6 +273,7 @@ libpython3.5-dev:amd64				install
 libpython3.5-minimal:amd64			install
 libpython3.5-stdlib:amd64			install
 libquadmath0:amd64				install
+libreadline5:amd64				install
 libreadline7:amd64				install
 librpcsecgss3:amd64				install
 librtmp1:amd64					install
@@ -265,6 +284,7 @@ libselinux1:amd64				install
 libsemanage-common				install
 libsemanage1:amd64				install
 libsepol1:amd64					install
+libsigsegv2:amd64				install
 libslang2:amd64					install
 libsm6:amd64					install
 libsmartcols1:amd64				install
@@ -278,9 +298,11 @@ libstdc++6:amd64				install
 libswitch-perl					install
 libsystemd0:amd64				install
 libtasn1-6:amd64				install
+libterm-readkey-perl				install
 libtext-charwidth-perl				install
 libtext-iconv-perl				install
 libtext-wrapi18n-perl				install
+libtimedate-perl				install
 libtinfo5:amd64					install
 libtirpc1:amd64					install
 libtokyocabinet9:amd64				install
@@ -288,6 +310,7 @@ libtsan0:amd64					install
 libubsan0:amd64					install
 libudev1:amd64					install
 libunistring0:amd64				install
+liburi-perl					install
 libustr-1.0-1:amd64				install
 libuuid1:amd64					install
 libverto-libev1:amd64				install
@@ -340,12 +363,19 @@ make						install
 man-db						install
 manpages					install
 manpages-dev					install
+mariadb-client-10.1				install
+mariadb-client-core-10.1			install
+mariadb-common					install
+mariadb-server					install
+mariadb-server-10.1				install
+mariadb-server-core-10.1			install
 mawk						install
 mime-support					install
 monitoring-plugins-basic			install
 monitoring-plugins-common			install
 mount						install
 multiarch-support				install
+mysql-common					install
 nano						install
 ncurses-base					install
 ncurses-bin					install
@@ -434,6 +464,7 @@ rsyslog						install
 sed						install
 sensible-utils					install
 shared-mime-info				install
+socat						install
 ssh						install
 ssl-cert					install
 sudo						install
