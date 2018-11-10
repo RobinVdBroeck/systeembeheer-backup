@@ -1,6 +1,6 @@
 $TTL	1
 @	IN	SOA	robin-vandenbroeck.sb.uclllabs.be. ns1.uclllabs.be. (
-			 111126		; Serial
+			 111127		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -20,5 +20,8 @@ supersecure 	IN	A	193.191.177.180
 
 robin-vandenbroeck.sb.uclllabs.be. 		IN 	CAA	0 issue "letsencrypt.org"
 robin-vandenbroeck.sb.uclllabs.be.		IN	CAA	0 issuewild "letsencrypt.org"
+robin-vandenbroeck.sb.uclllabs.be.		IN	CAA	0 iodef "mailto:robin.vandenbroeck@student.ucll.be"
 secure.robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 issue "letsencrypt.org"
+secure.robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 iodef "mailto:robin.vandenbroeck@student.ucll.be"
 supersecure.robin-vandenbroeck.sb.uclllabs.be	IN	CAA	0 issue "letsencrypt.org"
+supersecure.robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 iodef "mailto:robin.vandenbroeck@student.ucll.be"
