@@ -1,6 +1,6 @@
 $TTL	1
 @	IN	SOA	robin-vandenbroeck.sb.uclllabs.be. ns1.uclllabs.be. (
-			 111124		; Serial
+			 111125		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -15,7 +15,7 @@ www1		IN	A	193.191.177.180
 test		IN	A	193.191.177.254
 www2		IN	A	193.191.177.180
 secure		IN	A	193.191.177.180
-super-secure 	IN	A	193.191.177.180
+supersecure 	IN	A	193.191.177.180
 
 robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 issuewild ";"
 robin-vandenbroeck.sb.uclllabs.be.	IN	CAA	0 issue "letsencrypt.org"
