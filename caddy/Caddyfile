@@ -1,3 +1,4 @@
+# vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
 http://www1.robin-vandenbroeck.sb.uclllabs.be {
     root /etc/www/www1
     gzip
@@ -23,4 +24,14 @@ https://secure.robin-vandenbroeck.sb.uclllabs.be {
   gzip
   log /var/log/http/access-secure.log
   errors /var/log/http/error-secure.log
+}
+
+https://supersecure.robin-vandenbroeck.sb.uclllabs.be {
+  header / {
+    Strict-Transport-Security "max-age 31968000" # 370 dagen (* 60 60 24 370)
+  }
+  root /etc/www/secure
+  gzip
+  log /var/log/http/access-supersecure.log
+  errors /var/log/http/error-superescure.log
 }
