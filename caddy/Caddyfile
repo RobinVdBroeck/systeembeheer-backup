@@ -1,4 +1,14 @@
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
+http://robin-vandenbroeck.sb.uclllabs.be, *:80 {
+   root /etc/www/default
+   gzip
+   log /var/log/http/access.log
+   errors /var/log/http/error.log
+}
+
+http://www.robin-vandenbroeck.sb.uclllabs.be {
+   redir http://robin-vandenbroeck.sb.uclllabs.be
+}
 http://www1.robin-vandenbroeck.sb.uclllabs.be {
     root /etc/www/www1
     gzip
