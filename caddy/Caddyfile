@@ -46,3 +46,18 @@ https://supersecure.robin-vandenbroeck.sb.uclllabs.be {
   log /var/log/http/access-supersecure.log
   errors /var/log/http/error-superescure.log
 }
+
+http://phpmyadmin.robin-vandenbroeck.sb.uclllabs.be {
+  redir https://phpmyadmin.robin-vandenbroeck.sb.uclllabs.be
+}
+
+https://phpmyadmin.robin-vandenbroeck.sb.uclllabs.be {
+  header / {
+    Strict-Transport-Security "max-age 31968000"
+  }
+  root /etc/www/phpmyadmin
+  gzip
+  log /var/log/http/access-phpmyadmin.log
+  errors /var/log/http/error-phpmyadmin.log
+  fastcgi / 127.0.0.1:9000 php
+}
