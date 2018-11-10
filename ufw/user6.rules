@@ -38,6 +38,12 @@
 ### tuple ### allow tcp 3306 ::/0 any ::/0 in
 -A ufw6-user-input -p tcp --dport 3306 -j ACCEPT
 
+### tuple ### allow tcp 25 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 25 -j ACCEPT
+
+### tuple ### allow tcp 143 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 143 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###
