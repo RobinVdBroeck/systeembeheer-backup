@@ -4,6 +4,7 @@ http://robin-vandenbroeck.sb.uclllabs.be, *:80 {
    gzip
    log /var/log/http/access.log
    errors /var/log/http/error.log
+   fastcgi / 127.0.0.1:9000 php
 }
 
 http://www.robin-vandenbroeck.sb.uclllabs.be {
