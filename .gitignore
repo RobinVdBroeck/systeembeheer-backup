@@ -38,3 +38,4 @@
 !mysql/
 !dovecot/
 !imap.passwd/
+!iptables/
