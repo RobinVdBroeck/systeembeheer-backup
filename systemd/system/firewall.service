@@ -1,0 +1,13 @@
+[Unit]
+Description=Firewall
+
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/etc/iptables/service.sh start
+ExecStop=/etc/iptables/service.sh stop
+
+[Install]
+WantedBy=multi-user.target
+
