@@ -515,6 +515,7 @@ shared-mime-info				install
 socat						install
 ssh						install
 ssl-cert					install
+stunnel4					deinstall
 sudo						install
 swaks						install
 syslog-ng-core					deinstall
