@@ -58,3 +58,12 @@ echo "------------"
 echo "New settings"
 iptables -L --line-numbers
 
+read -r -p "Do you want to save the settings? [y/N] " response
+echo #
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+then
+    echo "Saving settings"
+    iptables-save > /etc/iptables/rules.v4
+else 
+    echo "Not saving settings, you can always regenerate them by using this script again"
+fi
