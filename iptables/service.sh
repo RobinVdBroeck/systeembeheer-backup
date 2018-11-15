@@ -4,5 +4,6 @@ case "$1" in
 		iptables-restore < /etc/iptables/rules.v4
 		;;
 	stop)
-		echo "Stopping firewall"
+		iptables-restore < /etc/iptables/empty-rules.v4
+		;;	
 esac		
