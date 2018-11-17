@@ -38,8 +38,8 @@ ip6tables -A INPUT -p tcp --dport 587 -j ACCEPT
 ip6tables -A INPUT -p tcp --dport 993 -j ACCEPT
 ip6tables -A INPUT -p tcp --dport 22345 -j ACCEPT
 
-echo "Allow icmp"
-ip6tables -A INPUT -p icmp -j ACCEPT
+echo "Allow ipv6-icmp"
+ip6tables -A INPUT -p ipv6-icmp -j ACCEPT
 
 echo "Drop all other packages"
 ip6tables -A INPUT -j DROP
