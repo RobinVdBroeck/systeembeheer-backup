@@ -19,6 +19,9 @@ ip6tables -X
 echo "Allow everything from loopback"
 ip6tables -A INPUT -i lo -j ACCEPT
 
+echo "Allow everything from the internal network"
+ip6tables -A INPUT -s 2001:6a8:2880:: -j ACCEPT
+
 echo "Allow everything from mrt (Leia does not have ipv6)"
 ip6tables -A INPUT -s $mrtip -j ACCEPT
 
@@ -54,6 +57,6 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 then
     echo "Saving settings"
     ip6tables-save > /etc/iptables/rules.v6
-else 
+else
     echo "Not saving settings, you can always regenerate them by using this script again"
 fi
