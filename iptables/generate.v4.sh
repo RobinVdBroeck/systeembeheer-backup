@@ -3,9 +3,6 @@
 # Based on: 
 # 1. https://www.digitalocean.com/community/tutorials/how-to-list-and-delete-iptables-firewall-rules#flush-all-rules,-delete-all-chains,-and-accept-all
 # 2. https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04
-
-
-
 mrtip=193.191.177.6
 leiaip=193.191.177.1
 
