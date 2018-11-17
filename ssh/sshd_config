@@ -11,9 +11,9 @@
 # default value.
 
 Port 22345
-#AddressFamily any
-#ListenAddress 0.0.0.0
-#ListenAddress ::
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
 
 #HostKey /etc/ssh/ssh_host_rsa_key
 #HostKey /etc/ssh/ssh_host_ecdsa_key
