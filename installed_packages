@@ -109,6 +109,8 @@ libavahi-client3:amd64				install
 libavahi-common-data:amd64			install
 libavahi-common3:amd64				install
 libbind9-140:amd64				install
+libblas-common					install
+libblas3					install
 libblkid1:amd64					install
 libbsd0:amd64					install
 libbz2-1.0:amd64				install
@@ -168,6 +170,7 @@ libgcc1:amd64					install
 libgcrypt20:amd64				install
 libgdbm3:amd64					install
 libgeoip1:amd64					install
+libgfortran3:amd64				install
 libgirepository-1.0-1:amd64			install
 libgl1-mesa-glx:amd64				install
 libglapi-mesa:amd64				install
@@ -221,12 +224,14 @@ libksba8:amd64					install
 liblcms2-2:amd64				install
 libldap-2.4-2:amd64				install
 libldap-common					install
+liblinear3:amd64				install
 liblocale-gettext-perl				install
 liblockfile-bin					install
 liblockfile1:amd64				install
 liblogging-stdlog0:amd64			install
 liblognorm5:amd64				install
 liblsan0:amd64					install
+liblua5.3-0:amd64				install
 liblwp-mediatypes-perl				install
 liblwres141:amd64				install
 liblz4-1:amd64					install
@@ -362,6 +367,7 @@ libxpm4:amd64					install
 libxrandr2:amd64				install
 libxrender1:amd64				install
 libxshmfence1:amd64				install
+libxslt1.1:amd64				install
 libxt6:amd64					install
 libxtables12:amd64				install
 libxtst6:amd64					install
@@ -396,9 +402,11 @@ nano						install
 ncurses-base					install
 ncurses-bin					install
 ncurses-term					install
+ndiff						install
 net-tools					install
 netbase						install
 netcat-traditional				install
+nmap						install
 ntp						install
 ntpstat						install
 openjdk-8-jdk-headless:amd64			install
@@ -436,6 +444,7 @@ psmisc						install
 python						install
 python-acme					install
 python-apt-common				install
+python-bs4					install
 python-certbot					install
 python-cffi-backend				install
 python-chardet					install
@@ -445,8 +454,10 @@ python-cryptography				install
 python-dnspython				install
 python-enum34					install
 python-funcsigs					install
+python-html5lib					install
 python-idna					install
 python-ipaddress				install
+python-lxml					install
 python-minimal					install
 python-mock					install
 python-openssl					install
@@ -463,6 +474,7 @@ python-setuptools				install
 python-six					install
 python-tz					install
 python-urllib3					install
+python-webencodings				install
 python-zope.component				install
 python-zope.event				install
 python-zope.hookable				install
