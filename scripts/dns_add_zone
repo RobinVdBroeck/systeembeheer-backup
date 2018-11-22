@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 import sys
 import os
-from lib import print_error
+import logging
+from lib import print_info, print_error, get_log_location, LOGGING_FORMAT
 
 def empty_zone(zone_name):
     return """
@@ -23,25 +24,32 @@ def add_zone(zone_name, zone_content):
 
     exists = os.path.isfile(zone_file_location)
     if exists:
-        .print_error("Cannot create allready exisiting zone")
+        print_error("Cannot create allready exisiting zone")
     with open(zone_file_location, "w+") as file:
         file.write(zone_content + "\n")
         return zone_file_location
 
 def add_to_named(zone_name, zone_file_location):
     with open("/etc/bind/named.conf.local", "a") as file:
-        file.write("""
+        content = """
 zone %s {
     type master;
     notify yes;
     file "%s"
 };
-
-        """ % (zone_name, zone_file_location))
+        """ % (zone_name, zone_file_location)
+        logger.debug("Writing '%s' to %s" % (content, zone_file_location))
+        file.write(content)
 
 
 if __name__ == '__main__':
+    # Setup logging
+    logging.basicConfig(level=logging.DEBUG, filename=get_log_location("dns_add_zone"),
+                        format=LOGGING_FORMAT, filemode="a+")
     args = sys.argv
+
+    logging.debug("Command issued: " + " ".join(args))
+
     # Don't need the name of the script
     args.pop(0)
     try:

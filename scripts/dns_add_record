@@ -2,99 +2,108 @@
 import sys
 import re
 import os
-from lib import print_error
+import logging
+from lib import print_info, print_error, get_log_location, LOGGING_FORMAT
 
 allowed_types = ["A", "CNAME", "MX"]
 
 def get_type_from_args(args, delete = False):
-	if('-t' in args):
-		index = args.index('-t')
-		type = args[index + 1]
-		if type not in allowed_types:
-			print_error(type + "is not an allowed type for a dns record, following are allowed:" + ','.join(allowed_types))
-		if delete:
-			for _ in range(2):
-				args.pop(index)
-	else:
-		type = "A"
-	return type
+    if('-t' in args):
+        index = args.index('-t')
+        type = args[index + 1]
+        if type not in allowed_types:
+                print_error(type + "is not an allowed type for a dns record, following are allowed:" + ','.join(allowed_types))
+        if delete:
+            for _ in range(2):
+                args.pop(index)
+    else:
+        type = "A"
+    return type
 
 def remove_first_del(string, delimiter):
-	string_list = string.split(delimiter)
-	string_list.pop(0)
-	result = delimiter.join(string_list)
-	return result
+    string_list = string.split(delimiter)
+    string_list.pop(0)
+    result = delimiter.join(string_list)
+    return result
 
 def add_to_zone(line, zone):
-	zone_file_location = "/etc/bind/zones/db." + zone
+    zone_file_location = "/etc/bind/zones/db." + zone
 
-	exists = os.path.isfile(zone_file_location)
-	if not exists:
-		print_error("Zone: " + zone + " does not exists (looked for " + zone_file_location + ")")
+    exists = os.path.isfile(zone_file_location)
+    if not exists:
+        print_error("Zone: " + zone + " does not exists (looked for " + zone_file_location + ")")
 
-	increase_serial(zone_file_location)
-	with open(zone_file_location, "a") as file:
-		print("Writing: " + line + " to zone " + zone)
-		file.write(line + "\n")
+    increase_serial(zone_file_location)
 
-	os.system("systemctl reload bind9")
+    with open(zone_file_location, "a") as file:
+        print_info("Writing: '%s' to zone %s" % (line, zone))
+        file.write(line + "\n")
+
+    logging.debug("Reloading bind9")
+    os.system("systemctl reload bind9")
 
 def increase_serial(zone_file_location):
-	with open(zone_file_location, "r") as file:
-		content = file.read()
+    with open(zone_file_location, "r") as file:
+        content = file.read()
 
-	match_serial_regex = r"(\d+)\s*;\s*Serial"
+    match_serial_regex = r"(\d+)\s*;\s*Serial"
 
-	try:
-		original_serial = re.search(match_serial_regex, content).group(1)
-	except IndexError:
-		error = "Could not find serial for zone located at %s" % (zone_file_location)
-		print_error(error)
+    try:
+        original_serial = re.search(match_serial_regex, content).group(1)
+    except IndexError:
+        error = "Could not find serial for zone located at %s" % (zone_file_location)
+        print_error(error)
 
-	try:
-		original_serial_as_int = int(original_serial)
-		new_serial = original_serial_as_int + 1
-	except ValueError:
-		error = "Invalid serial %s for zone located at %s" % (original_serial, zone_file_location)
-		print_error(error)
+    try:
+        original_serial_as_int = int(original_serial)
+        new_serial = original_serial_as_int + 1
+    except ValueError:
+        error = "Invalid serial %s for zone located at %s" % (original_serial, zone_file_location)
+        print_error(error)
 
-	new_serial_string = "%d\t; Serial" % (new_serial)
-	new_content = re.sub(match_serial_regex,
-						 new_serial_string,
-	 					 content)
+    new_serial_string = "%d\t; Serial" % (new_serial)
+    new_content = re.sub(match_serial_regex,
+                         new_serial_string,
+     					 content)
 
-	with open(zone_file_location, "w") as file:
-		print("Increasing serial from %d to %d" % (original_serial_as_int, new_serial))
-		file.write(new_content)
+    with open(zone_file_location, "w") as file:
+        print_info("Increasing serial from %d to %d" % (original_serial_as_int, new_serial))
+        file.write(new_content)
 
 
 if __name__ == '__main__':
-	args = sys.argv
-	# We dont need the name of the command
-	args.pop(0)
-	# Get the type
-	type = get_type_from_args(args, True)
+    # Setup logging
+    logging.basicConfig(level=logging.DEBUG, filename=get_log_location("dns_add_record"),
+                        format=LOGGING_FORMAT, filemode="a+")
+    args = sys.argv
 
-	# If type is cname: only require two params
-	if type == 'CNAME':
-		if len(args) != 2:
-			print(args)
-			print_error("CNAME type requires 2 params: name + value (ex: wwwwwww www.you.sb.uclllabs.be)")
-		name = args[0]
-		value = args[1]
-		zone = remove_first_del(value, '.')
-		add_to_zone('\t'.join([name, 'IN', type, value]), zone)
-	elif type == 'A':
-		if len(args) != 3:
-			print_error("A type requires 3 params: alias name + ip + zone (ex: test 12.34.56.78 foobar.uclllabs.be")
-		alias_name = args[0]
-		ip = args[1]
-		zone = args[2]
-		add_to_zone('\t'.join([alias_name, 'IN', type, ip]), zone)
-	elif type == 'MX':
-		if len(args) != 3:
-			print_error("MX type requires 3 paras: name + ip + zone (ex: mail 99.88.77.66 you.sb.uclllabs.be")
-		name = args[0]
-		ip = args[1]
-		zone = args[2]
-		add_to_zone('\t'.join([name, 'IN', type, ip]), zone)
+    logging.debug("Command issued: " + " ".join(args))
+
+    # We dont need the name of the command
+    args.pop(0)
+
+    # Get the type
+    type = get_type_from_args(args, True)
+
+    # If type is cname: only require two params
+    if type == 'CNAME':
+        if len(args) != 2:
+            print_error("CNAME type requires 2 params: name + value (ex: wwwwwww www.you.sb.uclllabs.be)")
+        name = args[0]
+        value = args[1]
+        zone = remove_first_del(value, '.')
+        add_to_zone('\t'.join([name, 'IN', type, value]), zone)
+    elif type == 'A':
+        if len(args) != 3:
+            print_error("A type requires 3 params: alias name + ip + zone (ex: test 12.34.56.78 foobar.uclllabs.be")
+        alias_name = args[0]
+        ip = args[1]
+        zone = args[2]
+        add_to_zone('\t'.join([alias_name, 'IN', type, ip]), zone)
+    elif type == 'MX':
+        if len(args) != 3:
+            print_error("MX type requires 3 paras: name + ip + zone (ex: mail 99.88.77.66 you.sb.uclllabs.be")
+        name = args[0]
+        ip = args[1]
+        zone = args[2]
+        add_to_zone('\t'.join([name, 'IN', type, ip]), zone)
