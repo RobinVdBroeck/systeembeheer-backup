@@ -39,3 +39,4 @@
 !dovecot/
 !imap.passwd/
 !iptables/
+!.pve-ignore.hosts
