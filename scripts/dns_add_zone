@@ -5,15 +5,15 @@ import logging
 from lib import print_info, print_error, get_log_location, LOGGING_FORMAT
 
 def empty_zone(zone_name):
-    return """$TLL 60480
-@   IN  SOA %s webmaster.ucll.be (
+    return """$TTL 60480
+@   IN  SOA %s.robin-vandenbroeck.sb.uclllabs.be webmaster.ucll.be (
                    1    ; Serial
               604800    ; Refresh
                86400    ; Retry
              2419200    ; Expire
                 8640 )  ; Negative cache ttl
-    IN  NS  ns1.uclllabs.be
-    IN  NS  ns2.uclllabs.be
+    IN  NS  ns1.uclllabs.be.
+    IN  NS  ns2.uclllabs.be.
     IN  A   193.191.177.180
 """ % (zone_name)
 
@@ -40,7 +40,7 @@ def add_to_named(zone_name, zone_file_location):
 zone %s {
     type master;
     notify yes;
-    file "%s"
+    file "%s";
 };
 """ % (zone_name, zone_file_location)
             logging.info("Adding %s to %s" % (zone_name, zone_file_location))
