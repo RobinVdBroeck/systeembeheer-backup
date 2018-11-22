@@ -5,8 +5,7 @@ import logging
 from lib import print_info, print_error, get_log_location, LOGGING_FORMAT
 
 def empty_zone(zone_name):
-    return """
-$TLL 60480
+    return """$TLL 60480
 @   IN  SOA %s webmaster.ucll.be (
                    1    ; Serial
               604800    ; Refresh
@@ -16,30 +15,38 @@ $TLL 60480
     IN  NS  ns1.uclllabs.be
     IN  NS  ns2.uclllabs.be
     IN  A   193.191.177.180
+""" % (zone_name)
 
-    """ % (zone_name)
+def get_zone_file_location(zone_name):
+    return "/etc/bind/zones/db.%s.robin-vandenbroeck.sb.uclllabs.be" % (zone_name)
 
-def add_zone(zone_name, zone_content):
-    zone_file_location = "/etc/bind/zones/db." + zone_name
-
+def add_zone(zone_name, zone_file_location, zone_content):
     exists = os.path.isfile(zone_file_location)
     if exists:
         print_error("Cannot create allready exisiting zone")
-    with open(zone_file_location, "w+") as file:
-        file.write(zone_content + "\n")
-        return zone_file_location
+    try:
+        with open(zone_file_location, "w+") as file:
+            logging.info("Adding zone db file for zone %s located at %s"
+                         % (zone_name, zone_file_location))
+            file.write(zone_content + "\n")
+    except IOError:
+        print_error("Could not write to: %s" % (zone_file_location))
 
 def add_to_named(zone_name, zone_file_location):
-    with open("/etc/bind/named.conf.local", "a") as file:
-        content = """
+    bind_file_location = "/etc/bind/named.conf.script"
+    try:
+        with open(bind_file_location, "a") as file:
+            content = """
 zone %s {
     type master;
     notify yes;
     file "%s"
 };
-        """ % (zone_name, zone_file_location)
-        logger.debug("Writing '%s' to %s" % (content, zone_file_location))
-        file.write(content)
+""" % (zone_name, zone_file_location)
+            logging.info("Adding %s to %s" % (zone_name, zone_file_location))
+            file.write(content)
+    except IOError:
+        print_error("Could not write to %s" % (bind_file_location))
 
 
 if __name__ == '__main__':
@@ -57,8 +64,10 @@ if __name__ == '__main__':
     except IndexError:
         print_error("Please enter a zone")
 
-
+    zone_file_location = get_zone_file_location(zone_name)
     zone_content = empty_zone(zone_name)
-    zone_file_location = add_zone(zone_name, zone_content)
+    add_zone(zone_name, zone_file_location, zone_content)
     add_to_named(zone_name, zone_file_location)
-    os.system("systemctl restart bind9")
+
+    logging.info("Reloading bind9")
+    #os.system("systemctl restart bind9")
