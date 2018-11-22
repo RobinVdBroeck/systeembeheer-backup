@@ -40,3 +40,4 @@
 !imap.passwd/
 !iptables/
 !.pve-ignore.hosts
+www/scripts/
