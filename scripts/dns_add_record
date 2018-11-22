@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
-import os.path
+import re
+import os
 
 allowed_types = ["A", "CNAME", "MX"]
 
@@ -34,9 +35,40 @@ def add_to_zone(line, zone):
 	if not exists:
 		print_error("Zone: " + zone + " does not exists (looked for " + zone_file_location + ")")
 
+	increase_serial(zone_file_location)
 	with open(zone_file_location, "a") as file:
 		print("Writing: " + line + " to zone " + zone)
 		file.write(line + "\n")
+
+	os.system("systemctl reload bind9")
+
+def increase_serial(zone_file_location):
+	with open(zone_file_location, "r") as file:
+		content = file.read()
+
+	match_serial_regex = r"(\d+)\s*;\s*Serial"
+
+	try:
+		original_serial = re.search(match_serial_regex, content).group(1)
+	except IndexError:
+		error = "Could not find serial for zone located at %s" % (zone_file_location)
+		print_error(error)
+
+	try:
+		original_serial_as_int = int(original_serial)
+		new_serial = original_serial_as_int + 1
+	except ValueError:
+		error = "Invalid serial %s for zone located at %s" % (original_serial, zone_file_location)
+		print_error(error)
+
+	new_serial_string = "%d\t; Serial" % (new_serial)
+	new_content = re.sub(match_serial_regex,
+						 new_serial_string,
+	 					 content)
+
+	with open(zone_file_location, "w") as file:
+		print("Increasing serial from %d to %d" % (original_serial_as_int, new_serial))
+		file.write(new_content)
 
 
 if __name__ == '__main__':
