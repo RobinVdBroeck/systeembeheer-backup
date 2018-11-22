@@ -27,7 +27,7 @@ http://www2.robin-vandenbroeck.sb.uclllabs.be {
 }
 
 http://secure.robin-vandenbroeck.sb.uclllabs.be {
-  redir https://secure.robin-vandenbroeck.sb.uclllabs.be
+  redir https://secure.robin-vandenbroeck.sb.uclllabs.be{uri}
 }
 
 https://secure.robin-vandenbroeck.sb.uclllabs.be {
@@ -35,6 +35,10 @@ https://secure.robin-vandenbroeck.sb.uclllabs.be {
   gzip
   log /var/log/http/access-secure.log
   errors /var/log/http/error-secure.log
+}
+
+http://supersecure.robin-vandenbroeck.sb.uclllabs.be {
+  redir https://supersecure.robin-vandenbroeck.sb.uclllabs.be{uri}
 }
 
 https://supersecure.robin-vandenbroeck.sb.uclllabs.be {
