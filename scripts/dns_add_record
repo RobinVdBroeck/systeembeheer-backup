@@ -2,12 +2,9 @@
 import sys
 import re
 import os
+from lib import print_error
 
 allowed_types = ["A", "CNAME", "MX"]
-
-def print_error(message):
-	print(message)
-	sys.exit(1)
 
 def get_type_from_args(args, delete = False):
 	if('-t' in args):

@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 import sys
 import os
-
-def print_error(err):
-    print(err)
-    sys.exit(1)
-
+from lib import print_error
 
 def empty_zone(zone_name):
     return """
@@ -27,7 +23,7 @@ def add_zone(zone_name, zone_content):
 
     exists = os.path.isfile(zone_file_location)
     if exists:
-        print_error("Cannot create allready exisiting zone")
+        .print_error("Cannot create allready exisiting zone")
     with open(zone_file_location, "w+") as file:
         file.write(zone_content + "\n")
         return zone_file_location
