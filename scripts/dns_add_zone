@@ -35,7 +35,7 @@ def add_zone(zone_name, zone_file_location, zone_content):
 def add_to_named(zone_name, zone_file_location):
     bind_file_location = "/etc/bind/named.conf.script"
     try:
-        with open(bind_file_location, "a") as file:
+        with open(bind_file_location, "a+") as file:
             content = """
 zone %s {
     type master;
@@ -70,4 +70,4 @@ if __name__ == '__main__':
     add_to_named(zone_name, zone_file_location)
 
     logging.info("Reloading bind9")
-    #os.system("systemctl restart bind9")
+    os.system("systemctl restart bind9")
