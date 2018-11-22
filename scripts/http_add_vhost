@@ -22,13 +22,14 @@ def create_vhost_config(vhost):
 http://%s {
     root %s
     gzip
-    log /var/log/scripts/http/access-%s.log
-    errors /var/log/scripts/http/error-%s.log
-};""" % (vhost, vhost_document_root, vhost, vhost)
+    log /var/log/http/access-%s.log
+    errors /var/log/http/error-%s.log
+}""" % (vhost, vhost_document_root, vhost, vhost)
 
 def add_vhost_config_to_caddy(vhost_config):
-    with open("/etc/caddy/Caddyfile.script", "a") as file:
-        logging.info("Writing vhost config to Caddyfile")
+    caddyfile_location = "/etc/caddy/Caddyfile.script"
+    with open(caddyfile_location , "a") as file:
+        logging.info("Writing vhost config to %s" % (caddyfile_location))
         file.write(vhost_config)
 
 if __name__ == '__main__':
