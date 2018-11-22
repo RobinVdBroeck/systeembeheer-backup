@@ -2,7 +2,7 @@
 import sys
 import os
 import logging
-from lib import print_info, print_error, get_log_location, LOGGING_FORMAT
+from lib import print_info, print_error, get_log_location, LOGGING_FORMAT, increase_serial, ipv4_address, ipv6_address
 
 def empty_zone(zone_name):
     return """$TTL 60480
@@ -12,15 +12,17 @@ def empty_zone(zone_name):
                86400    ; Retry
              2419200    ; Expire
                 8640 )  ; Negative cache ttl
-    IN  NS  ns1.uclllabs.be.
-    IN  NS  ns2.uclllabs.be.
-    IN  A   193.191.177.180
-""" % (zone_name)
+    IN  NS ns1.uclllabs.be.
+    IN  NS ns2.uclllabs.be.
+    IN  A   %s
+    IN  AAAA    %s
+""" % (zone_name, ipv4_address, ipv6_address)
 
 def get_zone_file_location(zone_name):
     return "/etc/bind/zones/db.%s.robin-vandenbroeck.sb.uclllabs.be" % (zone_name)
 
-def add_zone(zone_name, zone_file_location, zone_content):
+def add_zone(zone_name, zone_file_location):
+    zone_content = empty_zone(zone_name)
     exists = os.path.isfile(zone_file_location)
     if exists:
         print_error("Cannot create allready exisiting zone")
@@ -35,7 +37,7 @@ def add_zone(zone_name, zone_file_location, zone_content):
 def add_to_named(zone_name, zone_file_location):
     bind_file_location = "/etc/bind/named.conf.script"
     content = """
-zone %s {
+zone %s.robin-vandenbroeck.sb.uclllabs.be. {
     type master;
     notify yes;
     file "%s";
@@ -48,6 +50,24 @@ zone %s {
             file.write(content)
     except IOError:
         print_error("Could not write to %s" % (bind_file_location))
+
+def add_to_base(zone_name):
+    base_file_location = "/etc/bind/zones/db.robin-vandenbroeck.sb.uclllabs.be"
+
+    new_lines = "\n".join([
+        "%s\tIN\tNS\t%s-dns" % (zone_name, zone_name),
+        "%s-dns\tIN\tA\t%s" % (zone_name, ipv4_address),
+        "%s-dns\tIN\tAAAA\t%s" % (zone_name, ipv6_address)
+    ]) + "\n"
+
+    try:
+        with open(base_file_location, "a") as file:
+            logging.info("Adding dns servers for %s to %s" % (zone_name, base_file_location))
+            file.write(new_lines)
+    except IOError:
+        print_error("Could not write to %s" % (bind_file_location))
+
+    increase_serial(base_file_location)
 
 
 if __name__ == '__main__':
@@ -66,9 +86,9 @@ if __name__ == '__main__':
         print_error("Please enter a zone")
 
     zone_file_location = get_zone_file_location(zone_name)
-    zone_content = empty_zone(zone_name)
-    add_zone(zone_name, zone_file_location, zone_content)
-    add_to_named(zone_name, zone_file_location)
 
+    add_zone(zone_name, zone_file_location)
+    add_to_named(zone_name, zone_file_location)
+    add_to_base(zone_name)
     logging.info("Reloading bind9")
     os.system("systemctl restart bind9")
