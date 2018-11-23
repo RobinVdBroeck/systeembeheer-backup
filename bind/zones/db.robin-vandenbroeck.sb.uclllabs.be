@@ -1,13 +1,13 @@
 $TTL	1
 @	IN	SOA	robin-vandenbroeck.sb.uclllabs.be. ns1.uclllabs.be. (
-			 111146	; Serial
+			 111148	; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			  86400 )	; Negative Cache TTL
 	IN	NS	ns1.uclllabs.be.
 	IN	NS	ns2.uclllabs.be.
-	IN	NS	ns.larry-boltovskoi.sb.uclllabs.be.
+	IN	NS	ns.robin-vandenbroeck.sb.uclllabs.be.
 	IN	A 	193.191.177.180
 	IN	AAAA	2001:6a8:2880:a077::b4
 	IN	MX 	10	mx
