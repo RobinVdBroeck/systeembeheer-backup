@@ -47,10 +47,10 @@ if __name__ == '__main__':
     except IndexError:
         print_error("Please enter a vhost")
 
-    config = create_vhost_config(vhost)
+    #config = create_vhost_config(vhost)
 
-    write_index(vhost)
-    add_vhost_config_to_caddy(config)
+    #write_index(vhost)
+    #add_vhost_config_to_caddy(config)
 
-    logging.info("Reloading caddy")
-    os.system("systemctl restart caddy")
+    #logging.info("Reloading caddy")
+    #os.system("systemctl restart caddy")

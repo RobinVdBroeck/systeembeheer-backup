@@ -309,6 +309,8 @@ libsocket6-perl					install
 libsqlite3-0:amd64				install
 libss2:amd64					install
 libssh2-1:amd64					install
+libssl-dev:amd64				install
+libssl-doc					install
 libssl1.0.2:amd64				install
 libssl1.1:amd64					install
 libstdc++-6-dev:amd64				install
@@ -316,6 +318,7 @@ libstdc++6:amd64				install
 libstemmer0d:amd64				install
 libswitch-perl					install
 libsystemd0:amd64				install
+libtalloc-dev					install
 libtalloc2:amd64				install
 libtasn1-6:amd64				install
 libterm-readkey-perl				install
@@ -437,6 +440,7 @@ php7.0-mysql					install
 php7.0-opcache					install
 php7.0-readline					install
 pinentry-curses					install
+pkg-config					install
 postfix						install
 postfix-sqlite					install
 procps						install

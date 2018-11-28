@@ -65,5 +65,3 @@ https://phpmyadmin.robin-vandenbroeck.sb.uclllabs.be {
   errors /var/log/http/error-phpmyadmin.log
   fastcgi / 127.0.0.1:9000 php
 }
-
-import ./Caddyfile.script
