@@ -40,6 +40,7 @@ dh-python					install
 diffutils					install
 dmidecode					install
 dmsetup						install
+dns-root-data					install
 dnsutils					install
 doc-debian					install
 dovecot-core					install
@@ -109,6 +110,7 @@ libavahi-client3:amd64				install
 libavahi-common-data:amd64			install
 libavahi-common3:amd64				install
 libbind9-140:amd64				install
+libbind9-160:amd64				install
 libblas-common					install
 libblas3					install
 libblkid1:amd64					install
@@ -141,6 +143,7 @@ libdebconfclient0:amd64				install
 libdevmapper1.02.1:amd64			install
 libdigest-hmac-perl				install
 libdns-export162				install
+libdns1102:amd64				install
 libdns162:amd64					install
 libdpkg-perl					install
 libdrm2:amd64					install
@@ -164,6 +167,7 @@ libfile-fcntllock-perl				install
 libfontconfig1:amd64				install
 libfontenc1:amd64				install
 libfreetype6:amd64				install
+libfstrm0:amd64					install
 libgc1c2:amd64					install
 libgcc-6-dev:amd64				install
 libgcc1:amd64					install
@@ -205,12 +209,16 @@ libiptc0:amd64					install
 libirs141:amd64					install
 libisc-export160				install
 libisc160:amd64					install
+libisc169:amd64					install
 libisccc140:amd64				install
+libisccc160:amd64				install
 libisccfg140:amd64				install
+libisccfg160:amd64				install
 libisl15:amd64					install
 libitm1:amd64					install
 libjemalloc1					install
 libjpeg62-turbo:amd64				install
+libjson-c3:amd64				install
 libk5crypto3:amd64				install
 libkadm5clnt-mit11:amd64			install
 libkadm5srv-mit11:amd64				install
@@ -225,6 +233,7 @@ liblcms2-2:amd64				install
 libldap-2.4-2:amd64				install
 libldap-common					install
 liblinear3:amd64				install
+liblmdb0:amd64					install
 liblocale-gettext-perl				install
 liblockfile-bin					install
 liblockfile1:amd64				install
@@ -234,6 +243,7 @@ liblsan0:amd64					install
 liblua5.3-0:amd64				install
 liblwp-mediatypes-perl				install
 liblwres141:amd64				install
+liblwres160:amd64				install
 liblz4-1:amd64					install
 liblzma5:amd64					install
 libmagic-mgc					install
@@ -278,6 +288,7 @@ libpipeline1:amd64				install
 libpng16-16:amd64				install
 libpopt0:amd64					install
 libprocps6:amd64				install
+libprotobuf-c1:amd64				install
 libpsl5:amd64					install
 libpython-stdlib:amd64				install
 libpython2.7-minimal:amd64			install
@@ -503,6 +514,7 @@ python3-keyrings.alt				install
 python3-minimal					install
 python3-pip					install
 python3-pkg-resources				install
+python3-ply					install
 python3-pyasn1					install
 python3-pycurl					install
 python3-pyinotify				install

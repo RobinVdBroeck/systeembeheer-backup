@@ -1,5 +1,5 @@
 #!/bin/sh -e
-# Called when a new interface comes up
+# Called when an interfaces comes up or down
 # Written by LaMont Jones <lamont@debian.org>
 
 # kick named as needed
