@@ -41,3 +41,4 @@
 !iptables/
 !.pve-ignore.hosts
 www/scripts/
+!raddb/
