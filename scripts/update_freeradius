@@ -42,3 +42,4 @@ find /usr/local/etc -type d -print0 | xargs -0 chmod 750
 chmod g+s /usr/local/etc/raddb/sites-available
 chmod g+s /usr/local/etc/raddb/sites-enabled
 chmod g+s /usr/local/etc/raddb/certs
+chown -R freerad /var/run/radiusd
