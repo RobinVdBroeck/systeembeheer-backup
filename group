@@ -28,7 +28,7 @@ list:x:38:
 irc:x:39:
 src:x:40:
 gnats:x:41:
-shadow:x:42:
+shadow:x:42:freerad
 utmp:x:43:
 video:x:44:
 sasl:x:45:
@@ -38,7 +38,7 @@ games:x:60:
 users:x:100:
 nogroup:x:65534:
 crontab:x:101:
-ssl-cert:x:102:
+ssl-cert:x:102:freerad
 input:x:103:
 postfix:x:104:
 postdrop:x:105:
@@ -59,3 +59,4 @@ mysql:x:117:
 vmail:x:2222:
 dovecot:x:118:
 dovenull:x:119:
+freerad:x:120:

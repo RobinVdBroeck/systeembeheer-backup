@@ -1,4 +1,6 @@
-an /usr/local sgid stuff
+#!/bin/sh
+
+# fix debian /usr/local sgid stuff
 chmod g-s /usr/local
 chgrp root /usr/local
 chmod 755 /usr/local

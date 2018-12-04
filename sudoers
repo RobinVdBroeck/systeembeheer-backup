@@ -18,7 +18,7 @@ Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 
 # User privilege specification
 root	ALL=(ALL:ALL) ALL
-check	robin-vandenbroeck=(root)     NOPASSWD:/usr/lib/nagios/plugins/check_apt,/usr/sbin/arp,/etc/scripts/dns_add_record,/etc/scripts/dns_add_zone,/etc/scripts/http_add_vhost
+check	robin-vandenbroeck=(root)     NOPASSWD:/usr/lib/nagios/plugins/check_apt,/usr/sbin/arp,/etc/scripts/dns_add_record,/etc/scripts/dns_add_zone,/etc/scripts/http_add_vhost,/etc/scripts/update_freeradius
 
 # Allow members of group sudo to execute any command
 %sudo	ALL=(ALL:ALL) ALL
