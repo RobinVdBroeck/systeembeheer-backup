@@ -4,3 +4,5 @@
 
 - pipeline.id: main
   path.config: "/etc/logstash/conf.d/*.conf"
+- pipeline.id: elastiflow
+  path.config: "/etc/logstash/elastiflow/conf.d/*.conf"

@@ -587,7 +587,7 @@ traceroute					install
 tzdata						install
 ucf						install
 udev						install
-unzip						deinstall
+unzip						install
 util-linux					install
 vim						install
 vim-common					install
