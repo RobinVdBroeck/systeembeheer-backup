@@ -2,6 +2,7 @@ adduser						install
 apt						install
 apt-listchanges					install
 apt-ntop-stable					install
+apt-transport-https				install
 apt-utils					install
 base-files					install
 base-passwd					install
@@ -52,6 +53,7 @@ dpkg						install
 dpkg-dev					install
 e2fslibs:amd64					install
 e2fsprogs					install
+elasticsearch					install
 ethtool						install
 fail2ban					install
 fakeroot					install

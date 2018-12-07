@@ -62,3 +62,4 @@ dovenull:x:119:
 freerad:x:120:
 redis:x:121:
 nprobe:x:999:
+elasticsearch:x:122:
