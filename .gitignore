@@ -43,4 +43,4 @@
 www/scripts/
 !raddb/
 !nprobe/
-!elasticsearch/elasticsearch.yml
+!elasticsearch/
