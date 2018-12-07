@@ -60,3 +60,5 @@ vmail:x:2222:
 dovecot:x:118:
 dovenull:x:119:
 freerad:x:120:
+redis:x:121:
+nprobe:x:999:

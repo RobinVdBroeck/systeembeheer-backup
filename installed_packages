@@ -1,6 +1,7 @@
 adduser						install
 apt						install
 apt-listchanges					install
+apt-ntop-stable					install
 apt-utils					install
 base-files					install
 base-passwd					install
@@ -38,6 +39,8 @@ debian-faq					install
 debianutils					install
 dh-python					install
 diffutils					install
+distro-info-data				install
+dkms						install
 dmidecode					install
 dmsetup						install
 dns-root-data					install
@@ -49,6 +52,7 @@ dpkg						install
 dpkg-dev					install
 e2fslibs:amd64					install
 e2fsprogs					install
+ethtool						install
 fail2ban					install
 fakeroot					install
 file						install
@@ -191,6 +195,7 @@ libgpm2:amd64					install
 libgssapi-krb5-2:amd64				install
 libgssglue1:amd64				install
 libgssrpc4:amd64				install
+libhiredis0.13:amd64				install
 libhogweed4:amd64				install
 libhtml-parser-perl				install
 libhtml-tagset-perl				install
@@ -249,6 +254,7 @@ liblzma5:amd64					install
 libmagic-mgc					install
 libmagic1:amd64					install
 libmariadbclient18:amd64			install
+libmaxminddb0:amd64				install
 libmnl0:amd64					install
 libmount1:amd64					install
 libmpc3:amd64					install
@@ -271,6 +277,7 @@ libnotmuch4					install
 libnpth0:amd64					install
 libnspr4:amd64					install
 libnss3:amd64					install
+libnuma1:amd64					install
 libopts25:amd64					install
 libp11-kit0:amd64				install
 libpam-cap:amd64				install
@@ -284,6 +291,7 @@ libpci3:amd64					install
 libpcre3:amd64					install
 libpcsclite1:amd64				install
 libperl5.24:amd64				install
+libpgm-5.2-0:amd64				install
 libpipeline1:amd64				install
 libpng16-16:amd64				install
 libpopt0:amd64					install
@@ -317,6 +325,7 @@ libslang2:amd64					install
 libsm6:amd64					install
 libsmartcols1:amd64				install
 libsocket6-perl					install
+libsodium18:amd64				install
 libsqlite3-0:amd64				install
 libss2:amd64					install
 libssh2-1:amd64					install
@@ -388,11 +397,18 @@ libxtst6:amd64					install
 libxv1:amd64					install
 libxxf86dga1:amd64				install
 libxxf86vm1:amd64				install
+libzmq5:amd64					install
+linux-compiler-gcc-6-x86			install
+linux-headers-4.9.0-8-amd64			install
+linux-headers-4.9.0-8-common			install
+linux-headers-amd64				install
+linux-kbuild-4.9				install
 linux-libc-dev:amd64				install
 locales						install
 login						install
 logrotate					install
 lsb-base					install
+lsb-release					install
 lsof						install
 make						install
 man-db						install
@@ -421,6 +437,7 @@ net-tools					install
 netbase						install
 netcat-traditional				install
 nmap						install
+nprobe						install
 ntp						install
 ntpstat						install
 openjdk-8-jdk-headless:amd64			install
@@ -438,6 +455,8 @@ perl						install
 perl-base					install
 perl-modules-5.24				install
 perl-openssl-defaults:amd64			install
+pfring						install
+pfring-dkms					install
 php						install
 php-common					install
 php-fpm						install
@@ -533,6 +552,8 @@ python3.5-dev					install
 python3.5-minimal				install
 rblcheck					install
 readline-common					install
+redis-server					install
+redis-tools					install
 reportbug					install
 resolvconf					install
 rsync						install

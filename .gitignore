@@ -42,3 +42,4 @@
 !.pve-ignore.hosts
 www/scripts/
 !raddb/
+!nprobe/
