@@ -40,6 +40,7 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p tcp --dport 587 -j ACCEPT
 iptables -A INPUT -p tcp --dport 993 -j ACCEPT
+iptables -A INPUT -p tcp --dport 5601 -j ACCEPT
 iptables -A INPUT -p tcp --dport 22345 -j ACCEPT
 
 echo "Allow icmp"

@@ -63,3 +63,5 @@ freerad:x:120:
 redis:x:121:
 nprobe:x:999:
 elasticsearch:x:122:
+logstash:x:998:
+kibana:x:123:
