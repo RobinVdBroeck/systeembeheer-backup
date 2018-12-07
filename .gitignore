@@ -45,3 +45,4 @@ www/scripts/
 !nprobe/
 !elasticsearch/
 !kibana/
+!logstash/
