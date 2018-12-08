@@ -1,6 +1,6 @@
 $TTL	1
 @	IN	SOA	robin-vandenbroeck.sb.uclllabs.be. ns1.uclllabs.be. (
-			 111156  	; Serial
+			 111158  	; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -29,6 +29,8 @@ phpmyadmin 	IN 	A	193.191.177.180
 phpmyadmin 	IN 	AAAA	2001:6a8:2880:a077::b4
 mx		IN	A	193.191.177.180
 mx		IN	AAAA	2001:6a8:2880:a077::b4
+kibana		IN	A	193.191.177.85
+
 
 robin-vandenbroeck.sb.uclllabs.be. 		IN 	CAA	0 issue "letsencrypt.org"
 robin-vandenbroeck.sb.uclllabs.be.		IN	CAA	0 issuewild "letsencrypt.org"
