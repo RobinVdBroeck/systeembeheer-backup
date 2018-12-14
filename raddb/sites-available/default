@@ -455,6 +455,12 @@ authorize {
 #	Autz-Type Status-Server {
 #
 #	}
+	if ("%{User-Name}" == "check") {
+        	update control {
+             		Tmp-String-0 = "%{debug:3}"
+        	}
+	}
+
 }
 
 
