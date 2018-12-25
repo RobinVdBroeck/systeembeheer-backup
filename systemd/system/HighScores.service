@@ -1,0 +1,12 @@
+[Unit]
+Description = Highscores java service
+After network.target = HighScores.service
+
+[Service]
+Type = forking
+ExecStart = /usr/local/bin/HighScoresService.sh start
+ExecStop = /usr/local/bin/HighScoresService.sh stop
+ExecReload = /usr/local/bin/HighScoresService.sh reload
+
+[Install]
+WantedBy=multi-user.target
