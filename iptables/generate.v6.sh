@@ -29,14 +29,9 @@ echo "Allowing current connections"
 ip6tables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 echo "Setup rules for specific services"
-ip6tables -A INPUT -p tcp --dport 25 -j ACCEPT
-ip6tables -A INPUT -p tcp --dport 53 -j ACCEPT
+PORTS=25,53,80,443,587,993,8080,22345
+ip6tables -A INPUT -p tcp --match multiport --dports $PORTS -j ACCEPT
 ip6tables -A INPUT -p udp --dport 53 -j ACCEPT
-ip6tables -A INPUT -p tcp --dport 80 -j ACCEPT
-ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT
-ip6tables -A INPUT -p tcp --dport 587 -j ACCEPT
-ip6tables -A INPUT -p tcp --dport 993 -j ACCEPT
-ip6tables -A INPUT -p tcp --dport 22345 -j ACCEPT
 
 echo "Allow ipv6-icmp"
 ip6tables -A INPUT -p ipv6-icmp -j ACCEPT

@@ -104,7 +104,7 @@ isc-dhcp-client					install
 isc-dhcp-common					install
 java-common					install
 javascript-common				deinstall
-kibana						install
+kibana						deinstall
 kmod						install
 krb5-locales					install
 less						install
@@ -476,7 +476,7 @@ linux-libc-dev:amd64				install
 locales						install
 login						install
 logrotate					install
-logstash					install
+logstash					deinstall
 lsb-base					install
 lsb-release					install
 lsof						install
